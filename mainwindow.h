@@ -1,6 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+// standar includes
+#include <string>
+#include <vector>
+
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QSerialPortInfo>
@@ -33,6 +37,7 @@ private:
     Ui::MainWindow *ui;
     QSerialPort *serial;
     int linea;
+    std::vector<string> portList;
 
     void openSerialPort();
     void enviarModulo(unsigned char comando, unsigned char val);

@@ -8,8 +8,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     serial = new QSerialPort(this);
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::leerModulo);
-
     linea = 1;
+
+    // This part is to check the number of serial ports
+    Q_FOREACH(QSerialPortInfo port, QSerialPortInfo::availablePorts()) {
+        ui->txbRecibido->appendPlainText("Puerto Encontrado:" + port.portName());
+    }
 }
 
 MainWindow::~MainWindow()
