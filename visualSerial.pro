@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    lcdcomm.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    lcdcomm.h \
+    visualconstanst.h
 
 FORMS    += mainwindow.ui
