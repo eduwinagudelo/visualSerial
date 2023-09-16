@@ -99,8 +99,8 @@ void LCDComm::changeLine()
     this->appendCallback("Changing line in the LCD");
     if(this->currentLine == 0){
         this->currentLine = 1;
-        this->writePort(SENDTYPE::NEXTLINE,&(this->currentLine));
     }
+    this->writePort(SENDTYPE::NEXTLINE,&(this->currentLine));
 }
 
 void LCDComm::setPortName(QString name)
