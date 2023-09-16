@@ -30,11 +30,6 @@ LCDComm::LCDComm( std::function<void(QString)> f)
 
 LCDComm::~LCDComm()
 {
-    // check thread
-    /*if(runStatus)
-    {
-        runStatus = false;
-    }*/
     if(port->isOpen())
     {
         port->close();
@@ -209,5 +204,4 @@ void LCDComm::readPort()
     }
     QString str = QString(barr);
     this->appendCallback(str);
-    //return static_cast<unsigned char>(str.length());
 }
