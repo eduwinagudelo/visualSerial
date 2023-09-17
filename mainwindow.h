@@ -1,9 +1,20 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+// standar includes
+#include <algorithm>
+#include <functional>
+#include <string>
+#include <vector>
+
+// QT includes
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QSerialPort>
 #include <QSerialPortInfo>
+
+// Custom includes
+#include "lcdcomm.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,9 +44,11 @@ private:
     Ui::MainWindow *ui;
     QSerialPort *serial;
     int linea;
+    std::vector<std::string> portList;
+    LCDComm* lcd;
 
     void openSerialPort();
-    void enviarModulo(unsigned char comando, unsigned char val);
+    void enviarModulo(unsigned char val);
     void closeSerialPort();
 };
 
