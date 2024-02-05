@@ -17,9 +17,6 @@
 // Custom includes
 #include "visualconstanst.h"
 
-// Definitions
-static const int MAX_LINES = 2;
-
 class LCDComm : public QObject
 {
     Q_OBJECT
@@ -52,10 +49,8 @@ public:
 private:
     QSerialPort* port;
     QString portName;
-    //std::thread commProcess;
     std::vector<std::string> portList;
     int currentLine;
-    //bool runStatus;
     std::function<void(QString)> appendCallback;
 
     // Private specific methods
@@ -64,7 +59,6 @@ private:
 
 private slots:
     void readPort();
-    //void monitorPort(); // Thread method
 
 };
 
