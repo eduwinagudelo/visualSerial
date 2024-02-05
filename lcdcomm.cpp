@@ -3,7 +3,6 @@
 LCDComm::LCDComm()
 {
     this->currentLine = 0;
-    //this->runStatus = false;
     this->appendCallback = nullptr;
     this->port = new QSerialPort(this);
     QObject::connect(port, &QSerialPort::readyRead, this, &LCDComm::readPort);
@@ -12,7 +11,6 @@ LCDComm::LCDComm()
 LCDComm::LCDComm(QString portname, std::function<void(QString)> f)
 {
     this->currentLine = 0;
-    //this->runStatus = false;
     this->appendCallback = f;
     this->portName = portname;
     this->port = new QSerialPort(this);
@@ -22,7 +20,6 @@ LCDComm::LCDComm(QString portname, std::function<void(QString)> f)
 LCDComm::LCDComm( std::function<void(QString)> f)
 {
     this->currentLine = 0;
-    //this->runStatus = false;
     this->appendCallback = f;
     this->port = new QSerialPort(this);
     QObject::connect(port, &QSerialPort::readyRead, this, &LCDComm::readPort);
