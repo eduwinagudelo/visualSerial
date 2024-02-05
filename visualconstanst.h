@@ -16,5 +16,4 @@ static const char S_NUM = 0XD;
 
 static const int MAX_LINES = 2;
 
-
 #endif // VISUALCONSTANST_H
