@@ -35,19 +35,6 @@ void MainWindow::enviarModulo(unsigned char val){
 }
 
 void MainWindow::leerModulo(){
-    /*char entrada = 0xA;
-    char borrado = 0xB;
-    QByteArray barr = serial->readAll();
-    for(int i = 0; i < barr.length(); i++){
-        if(barr.at(i) == entrada){
-            barr[i] = 0x3E;
-        }
-        else if(barr.at(i) == borrado)
-            barr[i] = 0x3C;
-    }
-    QString str = QString(barr);
-    ui->lcdNumber->display( ui->lcdNumber->intValue() +  str.length());
-    ui->txbRecibido->insertPlainText(str);*/
 }
 
 void MainWindow::closeSerialPort(){
